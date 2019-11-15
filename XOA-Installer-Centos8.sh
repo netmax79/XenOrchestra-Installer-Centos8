@@ -51,14 +51,14 @@ echo "${green}==================================="
 echo "Install build tools 4 xoa..."
 echo "${green}==================================="
 sleep 1
-yum install gcc gcc-c++ make openssl-devel patch redis libpng-devel python36 git nfs-utils -y > /dev/null 2>&1
+yum install gcc gcc-c++ make openssl-devel patch redis libpng-devel python2 git nfs-utils -y > /dev/null 2>&1
 # enable service redis  dll 
 echo "${orange}==================================="
 echo "enable redis server..."
 echo "${green}==================================="
 /bin/systemctl enable redis && /bin/systemctl start redis
 /bin/systemctl enable rpcbind && /bin/systemctl start rpcbind 
-/usr/sbin/update-alternatives --set python /usr/bin/python3
+/usr/sbin/update-alternatives --set python /usr/bin/python2
 echo "${orange}==================================="
 echo " clone xoa engine from source"
 echo "${orange}==================================="
@@ -95,6 +95,7 @@ echo "${green}==================================="
 echo "Applying patches ..."
 echo "${orange}==================================="
 for PATCH in $(cat /root/series) ; do
+ echo "Patch: ${PATCH}"
  patch -p1 < /root/${PATCH}
 done
 echo "${orange}==================================="
