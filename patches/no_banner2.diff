@@ -1,0 +1,43 @@
+--- xen-orchestra/packages/xo-web/src/xo-app/index.js.orig	2019-09-06 15:55:49.945530861 +0200
++++ xen-orchestra/packages/xo-web/src/xo-app/index.js	2019-09-06 15:57:57.960245429 +0200
+@@ -115,19 +115,6 @@
+     const now = Math.floor(Date.now() / 1e3)
+     const oneWeekAgo = now - 7 * 24 * 3600
+     if (!previousDisclaimer || previousDisclaimer < oneWeekAgo) {
+-      alert(
+-        _('disclaimerTitle'),
+-        <div>
+-          <p>{_('disclaimerText1')}</p>
+-          <p>
+-            {_('disclaimerText2')}{' '}
+-            <a href='https://xen-orchestra.com/#!/xoa?pk_campaign=xoa_source_upgrade&pk_kwd=ossmodal'>
+-              XOA (turnkey appliance)
+-            </a>
+-          </p>
+-          <p>{_('disclaimerText3')}</p>
+-        </div>
+-      )
+       cookies.set('previousDisclaimer', now)
+     }
+   }
+@@ -225,20 +212,6 @@
+                   </Link>
+                 </div>
+               )}
+-              {plan === 'Community' && !this.state.dismissedSourceBanner && (
+-                <div className='alert alert-danger mb-0'>
+-                  <a
+-                    href='https://xen-orchestra.com/#!/xoa?pk_campaign=xo_source_banner'
+-                    rel='noopener noreferrer'
+-                    target='_blank'
+-                  >
+-                    {_('disclaimerText3')}
+-                  </a>
+-                  <button className='close' onClick={this.dismissSourceBanner}>
+-                    &times;
+-                  </button>
+-                </div>
+-              )}
+               <div style={CONTAINER_STYLE}>
+                 <Shortcuts
+                   name='XoApp'
