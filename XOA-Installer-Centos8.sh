@@ -51,20 +51,21 @@ echo "${green}==================================="
 echo "Install build tools 4 xoa..."
 echo "${green}==================================="
 sleep 1
-yum install gcc gcc-c++ make openssl-devel patch redis libpng-devel python git nfs-utils -y > /dev/null 2>&1
+yum install gcc gcc-c++ make openssl-devel patch redis libpng-devel python36 git nfs-utils -y > /dev/null 2>&1
 # enable service redis  dll 
 echo "${orange}==================================="
 echo "enable redis server..."
 echo "${green}==================================="
 /bin/systemctl enable redis && /bin/systemctl start redis
 /bin/systemctl enable rpcbind && /bin/systemctl start rpcbind 
+/usr/sbin/update-alternatives --set python /usr/bin/python3
 echo "${orange}==================================="
 echo " clone xoa engine from source"
 echo "${orange}==================================="
 sleep 1
 cd /opt/
 /usr/bin/git clone https://github.com/vatesfr/xen-orchestra 
-# allow config restoreee
+# allow config restore
 sed -i 's/< 5/> 0/g' /opt/xen-orchestra/packages/xo-web/src/xo-app/settings/config/index.js
 echo "${orange}==================================="
 echo "Build your XOA ... (in 10 seconds)"
