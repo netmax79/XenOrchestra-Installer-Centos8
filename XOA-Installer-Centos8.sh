@@ -31,7 +31,13 @@ echo "install nodeJS...."
 echo "Please wait......"
 echo "${red}==================================="
 sleep 1
-yum install nodejs -y  > /dev/null 2>&1
+#yum install nodejs -y  > /dev/null 2>&1
+curl -L -s -o /tmp/node-v8.16.2-linux-x64.tar.gz https://nodejs.org/dist/latest-v8.x/node-v8.16.2-linux-x64.tar.gz
+tar -C /tmp -xzf /tmp/node-v8.16.2-linux-x64.tar.gz
+CURD=`pwd`
+cd /tmp/node-v8.16.2-linux-x64
+mv bin include lib share /usr/local/
+cd ${CURD}
 # install yarn package
 echo "${green}==================================="
 echo "Install yarn package...."
