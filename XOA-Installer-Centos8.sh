@@ -137,7 +137,7 @@ After=network-online.target
 
 [Service]
 WorkingDirectory=/opt/xen-orchestra/packages/xo-server/
-ExecStart=/usr/bin/node ./bin/xo-server
+ExecStart=/usr/local/bin/node ./bin/xo-server
 Restart=always
 SyslogIdentifier=xo-server
 
