@@ -11,7 +11,7 @@ echo "${green}==================================="
 echo "${green}Working...."
 echo "${green}Please wait.."
 echo "${green}==================================="
-yum install epel-release haveged -y > /dev/null 2>&1
+yum install epel-release haveged rsync -y > /dev/null 2>&1
 systemctl enable haveged
 systemctl start haveged
 # install ssl
@@ -30,7 +30,7 @@ curl -L -s -o /tmp/node-v8.16.2-linux-x64.tar.gz https://nodejs.org/dist/latest-
 tar -C /tmp -xzf /tmp/node-v8.16.2-linux-x64.tar.gz
 CURD=`pwd`
 cd /tmp/node-v8.16.2-linux-x64
-mv bin include lib share /usr/local/
+rsync -a bin include lib share /usr/local/
 cd ${CURD}
 # install yarn package
 echo "${green}==================================="
