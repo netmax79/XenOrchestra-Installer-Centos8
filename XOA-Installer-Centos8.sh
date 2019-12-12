@@ -153,8 +153,8 @@ mkdir -p /etc/ssl/cert
 echo "${orange}==================================="
 echo "Generate self ssl"
 echo "${orange}==================================="
-openssl req -x509 -nodes -days 3650 -newkey rsa:4096 -keyout /etc/ssl/cert/key-selfsigned.pem -out /etc/ssl/cert/cert-selfsigned.pem -subj "/C=DE/ST=Bavaria/L=Munich/O=Linux Administrator Networks/OU=IT Department/CN=xoa"
-openssl dhparam -out /etc/ssl/cert/dhparam.pem 4096
+openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout /etc/ssl/cert/key-selfsigned.pem -out /etc/ssl/cert/cert-selfsigned.pem -subj "/C=DE/ST=Bavaria/L=Munich/O=Linux Administrator Networks/OU=IT Department/CN=xoa"
+openssl dhparam -out /etc/ssl/cert/dhparam.pem 2048
 cat /etc/ssl/cert/dhparam.pem | tee -a /etc/ssl/certs/cert-selfsigned.pem
 echo "+++++++++++++++++++++++++++"
 echo "========="DONE"============"
