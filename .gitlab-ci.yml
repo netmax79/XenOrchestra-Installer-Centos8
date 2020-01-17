@@ -14,5 +14,5 @@ compile:
         tags:
                 - docker
         script:
-                - curl -L https://raw.githubusercontent.com/netmax79/XenOrchestra-Installer-Centos8/master/XOA-Installer-Centos8.sh | sh
+                - ./XOA-Installer-Centos8.sh
 
