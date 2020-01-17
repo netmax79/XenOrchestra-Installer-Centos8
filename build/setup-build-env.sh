@@ -1,3 +1,3 @@
 #!/bin/bash
 
-yum -y install ncurses rsync
+yum -y install ncurses rsync initscripts
