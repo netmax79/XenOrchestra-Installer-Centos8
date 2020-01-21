@@ -1,0 +1,18 @@
+image: centos:8
+
+before_script:
+        - ./build/setup-build-env.sh
+
+after_script:
+        - ./build/post-build.sh
+
+stages:
+        - build
+
+compile:
+        stage: build
+        tags:
+                - docker
+        script:
+                - ./XOA-Installer-Centos8.sh
+
