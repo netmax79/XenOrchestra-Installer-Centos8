@@ -1,8 +1,5 @@
 # XenOrchestra-Installer-Centos8
 
-## THIS IS UNDER DEVELOPMENT - BUILD/INSTALL IS CURRENTLY NOT WORKING 
-## USE CentOS 7 Version instead!
-
 Use curl / wget
 
 run "curl -L https://raw.githubusercontent.com/netmax79/XenOrchestra-Installer-Centos8/master/XOA-Installer-Centos8.sh | sh"
