@@ -51,7 +51,7 @@ echo "${green}==================================="
 echo "Install build tools 4 xoa..."
 echo "${green}==================================="
 sleep 1
-yum install gcc gcc-c++ make openssl-devel patch redis libpng-devel python2 git nfs-utils -y > /dev/null 2>&1
+yum install gcc gcc-c++ make openssl-devel patch redis libpng-devel python2 git nfs-utils cifs-utils lvm2 -y > /dev/null 2>&1
 # enable service redis  dll 
 echo "${orange}==================================="
 echo "enable redis server..."
