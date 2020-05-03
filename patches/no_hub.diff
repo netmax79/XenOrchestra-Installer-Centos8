@@ -1,0 +1,18 @@
+--- xen-orchestra/packages/xo-web/src/xo-app/index.js-with-hub	2020-05-03 22:10:23.029540010 +0200
++++ xen-orchestra/packages/xo-web/src/xo-app/index.js	2020-05-03 22:10:53.877353403 +0200
+@@ -25,7 +25,6 @@
+ import Dashboard from './dashboard'
+ import Home from './home'
+ import Host from './host'
+-import Hub from './hub'
+ import Jobs from './jobs'
+ import Menu from './menu'
+ import Modal, { alert, FormModal } from 'modal'
+@@ -104,7 +103,6 @@
+   xoa: Xoa,
+   xosan: Xosan,
+   import: Import,
+-  hub: Hub,
+   proxies: Proxies,
+ })
+ @connectStore(state => {
