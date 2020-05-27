@@ -11,7 +11,8 @@ echo "${green}==================================="
 echo "${green}Working...."
 echo "${green}Please wait.."
 echo "${green}==================================="
-yum install epel-release haveged rsync -y > /dev/null 2>&1
+yum install epel-release -y > /dev/null 2>&1
+yum install haveged rsync -y > /dev/null 2>&1
 systemctl enable haveged
 systemctl start haveged
 # install ssl
