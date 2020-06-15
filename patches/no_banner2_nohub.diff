@@ -1,5 +1,5 @@
---- packages/xo-web/src/xo-app/index.js.orig	2020-05-27 07:32:11.288629863 +0200
-+++ packages/xo-web/src/xo-app/index.js	2020-05-27 07:54:50.854676288 +0200
+--- xen-orchestra/packages/xo-web/src/xo-app/index.js.orig	2020-05-27 07:32:11.288629863 +0200
++++ xen-orchestra/packages/xo-web/src/xo-app/index.js	2020-05-27 07:54:50.854676288 +0200
 @@ -25,7 +25,6 @@
  import Dashboard from './dashboard'
  import Home from './home'

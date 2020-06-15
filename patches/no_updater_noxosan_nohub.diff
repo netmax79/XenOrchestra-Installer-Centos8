@@ -1,5 +1,5 @@
---- packages/xo-web/src/xo-app/menu/index.js.orig	2020-05-27 07:33:21.511153714 +0200
-+++ packages/xo-web/src/xo-app/menu/index.js	2020-05-27 08:11:32.871484470 +0200
+--- xen-orchestra/packages/xo-web/src/xo-app/menu/index.js.orig	2020-05-27 07:33:21.511153714 +0200
++++ xen-orchestra/packages/xo-web/src/xo-app/menu/index.js	2020-05-27 08:11:32.871484470 +0200
 @@ -289,41 +289,6 @@
            },
          ],
