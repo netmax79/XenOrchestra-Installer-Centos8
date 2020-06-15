@@ -1,0 +1,30 @@
+--- xen-orchestra/packages/xo-web/src/xo-app/index.js.orig2	2020-06-15 22:02:48.779894597 +0200
++++ xen-orchestra/packages/xo-web/src/xo-app/index.js	2020-06-15 22:03:09.283764514 +0200
+@@ -236,27 +236,6 @@
+                   </Link>
+                 </div>
+               )}
+-              {plan === 'Community' && !this.state.dismissedSourceBanner && (
+-                <div className='alert alert-danger mb-0'>
+-                  <a
+-                    href='https://xen-orchestra.com/#!/xoa?pk_campaign=xo_source_banner'
+-                    rel='noopener noreferrer'
+-                    target='_blank'
+-                  >
+-                    {_('disclaimerText3')}
+-                  </a>{' '}
+-                  <a
+-                    href='https://xen-orchestra.com/docs/installation.html#banner-and-warnings'
+-                    rel='noopener noreferrer'
+-                    target='_blank'
+-                  >
+-                    {_('disclaimerText4')}
+-                  </a>
+-                  <button className='close' onClick={this.dismissSourceBanner}>
+-                    &times;
+-                  </button>
+-                </div>
+-              )}
+               <div style={CONTAINER_STYLE}>
+                 <Shortcuts
+                   name='XoApp'
