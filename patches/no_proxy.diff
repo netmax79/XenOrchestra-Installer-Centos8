@@ -1,0 +1,24 @@
+--- xen-orchestra/packages/xo-web/src/xo-app/index.js.orig	2020-06-16 07:52:22.757936142 +0200
++++ xen-orchestra/packages/xo-web/src/xo-app/index.js	2020-06-16 07:52:37.546841745 +0200
+@@ -32,7 +32,6 @@
+ import NewLegacyBackup from './backup/new-legacy-backup'
+ import NewVm from './new-vm'
+ import Pool from './pool'
+-import Proxies from './proxies'
+ import Self from './self'
+ import Settings from './settings'
+ import Sr from './sr'
+--- xen-orchestra/packages/xo-web/src/xo-app/menu/index.js.orig2	2020-06-16 07:52:50.467759272 +0200
++++ xen-orchestra/packages/xo-web/src/xo-app/menu/index.js	2020-06-16 07:52:58.767706292 +0200
+@@ -365,11 +365,6 @@
+           },
+         ],
+       },
+-      isAdmin && {
+-        to: '/proxies',
+-        icon: 'proxy',
+-        label: 'proxies',
+-      },
+       isAdmin && { to: '/about', icon: 'menu-about', label: 'aboutPage' },
+       !noOperatablePools && {
+         to: '/tasks',
