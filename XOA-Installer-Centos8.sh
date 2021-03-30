@@ -95,10 +95,17 @@ echo "${orange}==================================="
 echo "${green}==================================="
 echo "Applying patches ..."
 echo "${orange}==================================="
+GRC=0
 for PATCH in $(cat /root/series) ; do
  echo "Patch: ${PATCH}"
  patch -p1 < /root/${PATCH}
+ RC=$?
+ GRC=$(expr $GRC + $RC)
 done
+if [ "$GRC" -gt 0 ] ; then
+	echo "Patches not fully applied, error combined error code is: $GRC"
+	exit 1
+fi
 echo "${orange}==================================="
 echo "Running yarn build ..."
 echo "${orange}==================================="
