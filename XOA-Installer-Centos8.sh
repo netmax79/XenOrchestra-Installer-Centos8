@@ -27,10 +27,10 @@ echo "Please wait......"
 echo "${red}==================================="
 sleep 1
 #yum install nodejs -y  > /dev/null 2>&1
-curl -L -s -o /tmp/node-v12.19.0-linux-x64.tar.gz https://nodejs.org/dist/latest-v12.x/node-v12.19.0-linux-x64.tar.gz
-tar -C /tmp -xzf /tmp/node-v12.19.0-linux-x64.tar.gz
+curl -L -s -o /tmp/node-v12.21.0-linux-x64.tar.gz https://nodejs.org/dist/latest-v12.x/node-v12.21.0-linux-x64.tar.gz
+tar -C /tmp -xzf /tmp/node-v12.21.0-linux-x64.tar.gz
 CURD=`pwd`
-cd /tmp/node-v12.19.0-linux-x64
+cd /tmp/node-v12.21.0-linux-x64
 rsync -a bin include lib share /usr/local/
 cd ${CURD}
 # install yarn package
@@ -154,7 +154,7 @@ mkdir -p /etc/ssl/cert
 echo "${orange}==================================="
 echo "Generate self ssl"
 echo "${orange}==================================="
-openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout /etc/ssl/cert/key-selfsigned.pem -out /etc/ssl/cert/cert-selfsigned.pem -subj "/C=DE/ST=Bavaria/L=Munich/O=Linux Administrator Networks/OU=IT Department/CN=xoa"
+openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout /etc/ssl/cert/key-selfsigned.pem -out /etc/ssl/cert/cert-selfsigned.pem -subj "/C=/ST=/L=/O=/OU=IT Department/CN=xoa"
 openssl dhparam -out /etc/ssl/cert/dhparam.pem 2048
 cat /etc/ssl/cert/dhparam.pem | tee -a /etc/ssl/certs/cert-selfsigned.pem
 echo "+++++++++++++++++++++++++++"
