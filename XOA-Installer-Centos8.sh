@@ -27,7 +27,7 @@ echo "Please wait......"
 echo "${red}==================================="
 sleep 1
 #yum install nodejs -y  > /dev/null 2>&1
-curl -L -s -o /tmp/node-v14.16.0-linux-x64.tar.gz https://nodejs.org/dist/latest-v12.x/node-v14.16.0-linux-x64.tar.gz
+curl -L -s -o /tmp/node-v14.16.0-linux-x64.tar.gz https://nodejs.org/dist/latest-v14.x/node-v14.16.0-linux-x64.tar.gz
 tar -C /tmp -xzf /tmp/node-v14.16.0-linux-x64.tar.gz
 CURD=`pwd`
 cd /tmp/node-v14.16.0-linux-x64
