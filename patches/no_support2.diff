@@ -1,0 +1,43 @@
+--- xen-orchestra/packages/xo-web/src/xo-app/menu/index.js.orig	2021-03-31 17:04:30.953826184 +0200
++++ xen-orchestra/packages/xo-web/src/xo-app/menu/index.js	2021-03-31 17:04:42.413778203 +0200
+@@ -480,40 +480,6 @@
+               </Link>
+             </li>
+           )}
+-          {(isAdmin || +process.env.XOA_PLAN === 5) && (
+-            <li className='nav-item xo-menu-item'>
+-              <Link className='nav-link' style={{ display: 'flex' }} to='/about'>
+-                {+process.env.XOA_PLAN === 5 ? (
+-                  <span>
+-                    <span className={classNames(styles.hiddenCollapsed, 'text-warning')}>
+-                      <Icon icon='alarm' size='lg' fixedWidth /> {_('noSupport')}
+-                    </span>
+-                    <span className={classNames(styles.hiddenUncollapsed, 'text-warning')}>
+-                      <Icon icon='alarm' size='lg' fixedWidth />
+-                    </span>
+-                  </span>
+-                ) : +process.env.XOA_PLAN === 1 ? (
+-                  <span>
+-                    <span className={classNames(styles.hiddenCollapsed, 'text-warning')}>
+-                      <Icon icon='info' size='lg' fixedWidth /> {_('freeUpgrade')}
+-                    </span>
+-                    <span className={classNames(styles.hiddenUncollapsed, 'text-warning')}>
+-                      <Icon icon='info' size='lg' fixedWidth />
+-                    </span>
+-                  </span>
+-                ) : (
+-                  <span>
+-                    <span className={classNames(styles.hiddenCollapsed, 'text-success')}>
+-                      <Icon icon='info' size='lg' fixedWidth /> {getXoaPlan()}
+-                    </span>
+-                    <span className={classNames(styles.hiddenUncollapsed, 'text-success')}>
+-                      <Icon icon='info' size='lg' fixedWidth />
+-                    </span>
+-                  </span>
+-                )}
+-              </Link>
+-            </li>
+-          )}
+           <li>&nbsp;</li>
+           <li>&nbsp;</li>
+           <li className='nav-item xo-menu-item'>
