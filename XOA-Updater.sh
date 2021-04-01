@@ -7,10 +7,18 @@ CURD=`pwd`
 cd /tmp/node-v14.16.0-linux-x64
 rsync -a bin include lib share /usr/local/
 cd ${CURD}
+
+
 npm update yarn --global
 
+find /opt/xen-orchestra -iname \*.rej -o -iname \*.orig -exec rm {} \;
+
 cd /opt/xen-orchestra
-git pull -r --autostash
+# cleanup last changes
+for CHANGED in $(for FILE in $(cat series) ; do head -n2 $FILE ; done |grep -v orig | awk '{print $2}'|sort -u) ; do
+	git restore $CHANGED
+done
+git pull
 /usr/local/bin/yarn
 
 curl -s -L -o /root/series https://raw.githubusercontent.com/netmax79/XenOrchestra-Installer-Centos8/master/patches/series
