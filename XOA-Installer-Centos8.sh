@@ -189,7 +189,7 @@ echo "${green}==================================="
 echo "done"
 echo "${green}==================================="
 echo "${orange}==================================="
-if [ ! -f /opt/xen-orchestra/packages/xo-server/bin/xo-server ]
+if [ ! -f /opt/xen-orchestra/packages/xo-server/bin/xo-server ]; then
 	echo "${red} XO-SERVER not found: packages/xo-server/bin/xo-server"
 fi
 host=$(hostname -I)
