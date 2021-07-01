@@ -1,10 +1,11 @@
 #!/bin/bash
 # xo-updater (early version)
+NODEVER="v14.17.1"
 
-curl -L -s -o /tmp/node-v14.16.0-linux-x64.tar.gz https://nodejs.org/dist/latest-v14.x/node-v14.16.0-linux-x64.tar.gz
-tar -C /tmp -xzf /tmp/node-v14.16.0-linux-x64.tar.gz
+curl -L -s -o /tmp/node-${NODEVER}-linux-x64.tar.gz https://nodejs.org/dist/latest-v14.x/node-${NODEVER}-linux-x64.tar.gz
+tar -C /tmp -xzf /tmp/node-${NODEVER}-linux-x64.tar.gz
 CURD=`pwd`
-cd /tmp/node-v14.16.0-linux-x64
+cd /tmp/node-${NODEVER}-linux-x64
 rsync -a bin include lib share /usr/local/
 cd ${CURD}
 
@@ -15,6 +16,7 @@ find /opt/xen-orchestra -iname \*.rej -o -iname \*.orig -exec rm {} \;
 
 cd /opt/xen-orchestra
 # cleanup last changes
+git checkout .
 for CHANGED in $(for FILE in $(cat series) ; do head -n2 $FILE ; done |grep -v orig | awk '{print $2}'|sort -u) ; do
 	git restore $CHANGED
 done
