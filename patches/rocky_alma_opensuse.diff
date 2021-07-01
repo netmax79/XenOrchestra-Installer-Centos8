@@ -1,5 +1,5 @@
---- packages/xo-web/src/common/utils.js.orig	2021-07-01 11:26:25.644426383 +0200
-+++ packages/xo-web/src/common/utils.js	2021-07-01 11:27:00.374316552 +0200
+--- xen-orchestra/packages/xo-web/src/common/utils.js.orig	2021-07-01 11:26:25.644426383 +0200
++++ xen-orchestra/packages/xo-web/src/common/utils.js	2021-07-01 11:27:00.374316552 +0200
 @@ -174,7 +174,7 @@
  
  export const osFamily = invoke(
