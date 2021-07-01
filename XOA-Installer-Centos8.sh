@@ -1,5 +1,6 @@
 #!/bin/bash
 ##
+NODEVER="v14.17.1"
 red=$(tput setaf 1)
 green=$(tput setaf 2)
 orange=$(tput setaf 3)
@@ -27,10 +28,10 @@ echo "Please wait......"
 echo "${red}==================================="
 sleep 1
 #yum install nodejs -y  > /dev/null 2>&1
-curl -L -s -o /tmp/node-v14.16.0-linux-x64.tar.gz https://nodejs.org/dist/latest-v14.x/node-v14.16.0-linux-x64.tar.gz
-tar -C /tmp -xzf /tmp/node-v14.16.0-linux-x64.tar.gz
+curl -L -s -o /tmp/node-${NODEVER}-linux-x64.tar.gz https://nodejs.org/dist/latest-v14.x/node-${NODEVER}-linux-x64.tar.gz
+tar -C /tmp -xzf /tmp/node-${NODEVER}-linux-x64.tar.gz
 CURD=`pwd`
-cd /tmp/node-v14.16.0-linux-x64
+cd /tmp/node-${NODEVER}-linux-x64
 rsync -a bin include lib share /usr/local/
 cd ${CURD}
 # install yarn package
@@ -188,6 +189,9 @@ echo "${green}==================================="
 echo "done"
 echo "${green}==================================="
 echo "${orange}==================================="
+if [ ! -f /opt/xen-orchestra/packages/xo-server/bin/xo-server ]
+	echo "${red} XO-SERVER not found: packages/xo-server/bin/xo-server"
+fi
 host=$(hostname -I)
 echo "and then acces https://$host"
 echo "username : admin@admin.net"
@@ -195,4 +199,5 @@ echo "password : admin"
 echo "${orange}================================================="
 service sshd restart
 echo "--------------------------------------------------------------"
+
 
