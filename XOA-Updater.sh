@@ -1,6 +1,6 @@
 #!/bin/bash
 # xo-updater (early version)
-NODEVER="v14.17.1"
+NODEVER="v14.17.3"
 
 curl -L -s -o /tmp/node-${NODEVER}-linux-x64.tar.gz https://nodejs.org/dist/latest-v14.x/node-${NODEVER}-linux-x64.tar.gz
 tar -C /tmp -xzf /tmp/node-${NODEVER}-linux-x64.tar.gz

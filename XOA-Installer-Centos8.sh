@@ -1,6 +1,6 @@
 #!/bin/bash
 ##
-NODEVER="v14.17.1"
+NODEVER="v14.17.3"
 red=$(tput setaf 1)
 green=$(tput setaf 2)
 orange=$(tput setaf 3)
