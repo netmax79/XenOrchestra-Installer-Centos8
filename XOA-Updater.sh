@@ -41,5 +41,24 @@ if [ "$GRC" -gt 0 ] ; then
 fi
 
 /usr/local/bin/yarn build
-systemctl restart xo-server
+systemctl stop xo-server
+/bin/cat << EOF >> /etc/systemd/system/xo-server.service
+# Systemd service for XO-Server.
+
+[Unit]
+Description= XO Server
+After=network-online.target
+
+[Service]
+WorkingDirectory=/opt/xen-orchestra/packages/xo-server/
+ExecStart=/usr/local/bin/node ./dist/cli.mjs
+Restart=always
+SyslogIdentifier=xo-server
+
+[Install]
+WantedBy=multi-user.target
+EOF
+systemctl daemon-reload
+systemctl start xo-server
+r
 
