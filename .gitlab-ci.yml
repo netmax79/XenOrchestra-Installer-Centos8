@@ -1,4 +1,4 @@
-image: centos:8
+image: almalinux:8
 
 before_script:
         - ./build/setup-build-env.sh

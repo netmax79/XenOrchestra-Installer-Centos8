@@ -1,6 +1,7 @@
 #!/bin/bash
+export TERM=xterm-256color
 ##
-NODEVER="v14.17.3"
+NODEVER="v14.18.1"
 red=$(tput setaf 1)
 green=$(tput setaf 2)
 orange=$(tput setaf 3)
