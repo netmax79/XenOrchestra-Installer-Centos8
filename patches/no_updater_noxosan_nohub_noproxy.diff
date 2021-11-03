@@ -1,6 +1,6 @@
---- xen-orchestra/packages/xo-web/src/xo-app/menu/index.js.orig	2021-03-31 17:05:53.733482570 +0200
-+++ xen-orchestra/packages/xo-web/src/xo-app/menu/index.js	2021-03-31 17:09:38.342579089 +0200
-@@ -267,39 +267,6 @@
+--- xen-orchestra/packages/xo-web/src/xo-app/menu/index.js.orig	2021-11-03 14:06:23.068727164 +0100
++++ xen-orchestra/packages/xo-web/src/xo-app/menu/index.js	2021-11-03 14:07:28.758598878 +0100
+@@ -307,39 +307,6 @@
            },
          ],
        },
@@ -40,7 +40,7 @@
        isAdmin && {
          to: '/settings/servers',
          icon: 'menu-settings',
-@@ -376,28 +343,6 @@
+@@ -416,40 +383,6 @@
            },
          ],
        },
@@ -65,11 +65,23 @@
 -        to: '/proxies',
 -        icon: 'proxy',
 -        label: 'proxies',
+-        extra: [
+-          this._areProxiesOutOfDate() ? (
+-            <Tooltip content={_('proxiesNeedUpgrade')}>
+-              <StackedIcons
+-                icons={[
+-                  { color: 'text-success', icon: 'circle', size: 2 },
+-                  { icon: 'menu-update', size: 1 },
+-                ]}
+-              />
+-            </Tooltip>
+-          ) : null,
+-        ],
 -      },
        isAdmin && { to: '/about', icon: 'menu-about', label: 'aboutPage' },
        !noOperatablePools && {
          to: '/tasks',
-@@ -405,7 +350,6 @@
+@@ -457,7 +390,6 @@
          label: 'taskMenu',
          pill: nTasks,
        },
