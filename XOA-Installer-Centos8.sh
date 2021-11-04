@@ -1,7 +1,13 @@
 #!/bin/bash
-export TERM=xterm-256color
+if [ -z "${TERM}" ] ; then
+	export TERM=xterm-256color
+fi
+
 ##
+
 NODEVER="v14.18.1"
+
+##
 red=$(tput setaf 1)
 green=$(tput setaf 2)
 orange=$(tput setaf 3)
@@ -190,8 +196,8 @@ echo "${green}==================================="
 echo "done"
 echo "${green}==================================="
 echo "${orange}==================================="
-if [ ! -f /opt/xen-orchestra/packages/xo-server/bin/xo-server ]; then
-	echo "${red} XO-SERVER not found: packages/xo-server/bin/xo-server"
+if [ ! -f /opt/xen-orchestra/packages/xo-server/dist/cli.mjs ]; then
+	echo "${red} XO-SERVER not found: packages/xo-server/dist/cli.mjs"
 fi
 host=$(hostname -I)
 echo "and then acces https://$host"
