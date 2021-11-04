@@ -42,7 +42,7 @@ fi
 
 /usr/local/bin/yarn build
 systemctl stop xo-server
-/bin/cat << EOF >> /etc/systemd/system/xo-server.service
+/bin/cat << EOF > /etc/systemd/system/xo-server.service
 # Systemd service for XO-Server.
 
 [Unit]
@@ -60,5 +60,3 @@ WantedBy=multi-user.target
 EOF
 systemctl daemon-reload
 systemctl start xo-server
-r
-
