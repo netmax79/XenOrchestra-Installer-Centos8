@@ -5,7 +5,7 @@ fi
 
 ##
 
-NODEVER="v14.20.0"
+NODEVER="v18.8.0"
 
 ##
 red=$(tput setaf 1)
@@ -35,7 +35,7 @@ echo "Please wait......"
 echo "${red}==================================="
 sleep 1
 #yum install nodejs -y  > /dev/null 2>&1
-curl -L -s -o /tmp/node-${NODEVER}-linux-x64.tar.gz https://nodejs.org/dist/latest-v14.x/node-${NODEVER}-linux-x64.tar.gz
+curl -L -s -o /tmp/node-${NODEVER}-linux-x64.tar.gz https://nodejs.org/dist/latest-v18.x/node-${NODEVER}-linux-x64.tar.gz
 tar -C /tmp -xzf /tmp/node-${NODEVER}-linux-x64.tar.gz
 CURD=`pwd`
 cd /tmp/node-${NODEVER}-linux-x64
