@@ -1,0 +1,23 @@
+--- xen-orchestra/packages/xo-web/src/xo-app/home/pool-item.js.orig	2023-11-23 15:12:33.456895627 +0100
++++ xen-orchestra/packages/xo-web/src/xo-app/home/pool-item.js	2023-11-23 16:33:14.313942913 +0100
+@@ -106,20 +106,6 @@
+     this._getPoolLicenseInfo,
+     (isAdmin, poolLicenseInfo) => {
+       const alerts = []
+-
+-      if (isAdmin && this._isXcpngPool()) {
+-        const { icon, supportLevel } = poolLicenseInfo
+-        if (supportLevel !== 'total') {
+-          alerts.push({
+-            level: 'warning',
+-            render: (
+-              <p>
+-                {icon()} {this._getPoolLicenseIconTooltip()}
+-              </p>
+-            ),
+-          })
+-        }
+-      }
+       return alerts
+     }
+   )

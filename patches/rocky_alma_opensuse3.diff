@@ -1,0 +1,11 @@
+--- xen-orchestra/packages/xo-web/src/common/utils.js.orig	2023-05-03 15:42:59.458330238 +0200
++++ xen-orchestra/packages/xo-web/src/common/utils.js	2023-05-03 15:45:50.708364866 +0200
+@@ -184,7 +184,7 @@
+ 
+ export const osFamily = invoke(
+   {
+-    centos: ['centos'],
++    centos: ['centos', 'rockylinux', 'rocky', 'almalinux', 'alma'],
+     debian: ['debian'],
+     docker: ['coreos'],
+     fedora: ['fedora'],

@@ -5,7 +5,11 @@ fi
 
 ##
 
+<<<<<<< HEAD
 NODEVER="v18.18.2"
+=======
+NODEVER="v18.18.0"
+>>>>>>> 0cd4640b97a1f312d73af6ca22427f4e0a4eaa33
 
 ##
 red=$(tput setaf 1)
