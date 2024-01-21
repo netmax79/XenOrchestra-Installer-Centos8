@@ -1,0 +1,23 @@
+--- packages/xo-web/src/xo-app/home/pool-item.js.orig	2024-01-21 14:54:25.470656075 +0100
++++ packages/xo-web/src/xo-app/home/pool-item.js	2024-01-21 15:01:08.885702547 +0100
+@@ -113,20 +113,6 @@
+     (isAdmin, poolLicenseInfo, areHostsVersionsEqual, hosts, poolId) => {
+       const alerts = []
+ 
+-      if (isAdmin && this._isXcpngPool()) {
+-        const { icon, supportLevel } = poolLicenseInfo
+-        if (supportLevel !== 'total') {
+-          alerts.push({
+-            level: 'warning',
+-            render: (
+-              <p>
+-                {icon()} {this._getPoolLicenseIconTooltip()}
+-              </p>
+-            ),
+-          })
+-        }
+-      }
+-
+       if (!areHostsVersionsEqual) {
+         alerts.push({
+           level: 'danger',
