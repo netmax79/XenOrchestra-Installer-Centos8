@@ -1,5 +1,5 @@
---- packages/xo-web/src/xo-app/home/pool-item.js.orig	2024-01-21 14:54:25.470656075 +0100
-+++ packages/xo-web/src/xo-app/home/pool-item.js	2024-01-21 15:01:08.885702547 +0100
+--- xen-orchestra/packages/xo-web/src/xo-app/home/pool-item.js.orig	2024-01-21 14:54:25.470656075 +0100
++++ xen-orchestra/packages/xo-web/src/xo-app/home/pool-item.js	2024-01-21 15:01:08.885702547 +0100
 @@ -113,20 +113,6 @@
      (isAdmin, poolLicenseInfo, areHostsVersionsEqual, hosts, poolId) => {
        const alerts = []
