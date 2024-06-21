@@ -1,8 +1,8 @@
 #!/bin/bash
 # xo-updater (early version)
-NODEVER="v18.20.3"
+NODEVER="v20.15.0"
 
-curl -L -s -o /tmp/node-${NODEVER}-linux-x64.tar.gz https://nodejs.org/dist/latest-v18.x/node-${NODEVER}-linux-x64.tar.gz
+curl -L -s -o /tmp/node-${NODEVER}-linux-x64.tar.gz https://nodejs.org/dist/latest-v20.x/node-${NODEVER}-linux-x64.tar.gz
 tar -C /tmp -xzf /tmp/node-${NODEVER}-linux-x64.tar.gz
 CURD=`pwd`
 cd /tmp/node-${NODEVER}-linux-x64
