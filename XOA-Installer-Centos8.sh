@@ -5,7 +5,7 @@ fi
 
 ##
 
-NODEVER="v20.15.0"
+NODEVER="v20.17.0"
 
 ##
 red=$(tput setaf 1)
