@@ -1,0 +1,32 @@
+--- xen-orchestra/packages/xo-web/src/xo-app/home/host-item.js.orig	2024-12-04 20:43:40.405210767 +0100
++++ xen-orchestra/packages/xo-web/src/xo-app/home/host-item.js	2024-12-04 20:43:50.674283577 +0100
+@@ -188,29 +188,6 @@
+         })
+       }
+ 
+-      if (hasLicenseRestrictions(host)) {
+-        alerts.push({
+-          level: 'danger',
+-          render: (
+-            <span>
+-              <Icon icon='alarm' /> {_('licenseRestrictionsModalTitle')} {LICENSE_WARNING_BODY}
+-            </span>
+-          ),
+-        })
+-      }
+-
+-      const proSupportStatus = this._getProSupportStatus()
+-      if (proSupportStatus !== undefined && proSupportStatus.level !== 'success') {
+-        alerts.push({
+-          level: proSupportStatus.level,
+-          render: (
+-            <span>
+-              {proSupportStatus.icon} {_(proSupportStatus.message)}
+-            </span>
+-          ),
+-        })
+-      }
+-
+       if (isPubKeyTooShort) {
+         alerts.push({
+           level: 'warning',
