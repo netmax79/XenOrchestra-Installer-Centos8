@@ -1,0 +1,11 @@
+--- xen-orchestra/packages/xo-web/src/xo-app/home/pool-item.js.orig	2024-12-04 20:55:01.970052154 +0100
++++ xen-orchestra/packages/xo-web/src/xo-app/home/pool-item.js	2024-12-04 20:55:32.000265617 +0100
+@@ -163,8 +163,6 @@
+                   </span>
+                 )}
+                 &nbsp;
+-                {isAdmin && this._isXcpngPool() && supportLevel === 'total' && icon(this._getPoolLicenseIconTooltip())}
+-                &nbsp;
+                 {pool.HA_enabled && (
+                   <span>
+                     &nbsp;&nbsp;
