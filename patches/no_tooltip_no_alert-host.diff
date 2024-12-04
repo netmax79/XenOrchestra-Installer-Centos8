@@ -9,36 +9,6 @@
      }
  
      if (supportLevel === 'total') {
-@@ -168,29 +168,6 @@
-         })
-       }
- 
--      if (hasLicenseRestrictions(host)) {
--        alerts.push({
--          level: 'danger',
--          render: (
--            <span>
--              <Icon icon='alarm' /> {_('licenseRestrictionsModalTitle')} {LICENSE_WARNING_BODY}
--            </span>
--          ),
--        })
--      }
--
--      const proSupportStatus = this._getProSupportStatus()
--      if (proSupportStatus !== undefined && proSupportStatus.level !== 'success') {
--        alerts.push({
--          level: proSupportStatus.level,
--          render: (
--            <span>
--              {proSupportStatus.icon} {_(proSupportStatus.message)}
--            </span>
--          ),
--        })
--      }
--
-       if (!host.hvmCapable) {
-         alerts.push({
-           level: 'warning',
 @@ -243,9 +220,6 @@
                  &nbsp;
                  <BulkIcons alerts={this._getAlerts()} />
