@@ -1,6 +1,6 @@
 #!/bin/bash
 # xo-updater (early version)
-NODEVER="v20.19.0"
+NODEVER="v20.19.2"
 
 curl -L -s -o /tmp/node-${NODEVER}-linux-x64.tar.gz https://nodejs.org/dist/latest-v20.x/node-${NODEVER}-linux-x64.tar.gz
 tar -C /tmp -xzf /tmp/node-${NODEVER}-linux-x64.tar.gz
