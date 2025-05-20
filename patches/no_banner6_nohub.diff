@@ -1,0 +1,70 @@
+--- xen-orchestra/packages/xo-web/src/xo-app/index.js.orig	2025-05-20 22:54:17.566464399 +0200
++++ xen-orchestra/packages/xo-web/src/xo-app/index.js	2025-05-20 22:58:56.258472843 +0200
+@@ -33,7 +33,6 @@
+ import Dashboard from './dashboard'
+ import Home from './home'
+ import Host from './host'
+-import Hub from './hub'
+ import Jobs from './jobs'
+ import Menu from './menu'
+ import Modal, { alert, FormModal } from 'modal'
+@@ -134,7 +133,6 @@
+   xoa: Xoa,
+   xostor: Xostor,
+   import: Import,
+-  hub: Hub,
+   proxies: Proxies,
+ })
+ @addSubscriptions({
+@@ -336,23 +334,6 @@
+     const now = Math.floor(Date.now() / 1e3)
+     const oneWeekAgo = now - 7 * 24 * 3600
+     if (!previousDisclaimer || previousDisclaimer < oneWeekAgo) {
+-      alert(
+-        _('disclaimerTitle'),
+-        <div>
+-          <p>{_('disclaimerText1')}</p>
+-          <p>
+-            {_('disclaimerText2')}{' '}
+-            <a
+-              href='https://vates.tech/deploy/?pk_campaign=xoa_source_upgrade&pk_kwd=ossmodal'
+-              target='_blank'
+-              rel='noreferrer'
+-            >
+-              XOA (turnkey appliance)
+-            </a>
+-          </p>
+-          <p>{_('disclaimerText3')}</p>
+-        </div>
+-      )
+       cookies.set('previousDisclaimer', now)
+     }
+   }
+@@ -462,27 +443,6 @@
+                   <Link to='/xoa/update'>{_('notRegisteredDisclaimerRegister')}</Link>
+                 </div>
+               )}
+-              {plan === 'Community' && !this.state.dismissedSourceBanner && (
+-                <div className='alert alert-danger mb-0'>
+-                  <a
+-                    href='https://vates.tech/deploy/?pk_campaign=xo_source_banner'
+-                    rel='noopener noreferrer'
+-                    target='_blank'
+-                  >
+-                    {_('disclaimerText3')}
+-                  </a>{' '}
+-                  <a
+-                    href='https://docs.xen-orchestra.com/installation#banner-and-warnings'
+-                    rel='noopener noreferrer'
+-                    target='_blank'
+-                  >
+-                    {_('disclaimerText4')}
+-                  </a>
+-                  <button className='close' onClick={this.dismissSourceBanner}>
+-                    &times;
+-                  </button>
+-                </div>
+-              )}
+               {isTrialRunning(trial.trial) && !this.state.dismissedTrialBanner && (
+                 <div className='alert alert-info mb-0'>
+                   {_('trialLicenseInfo', {
